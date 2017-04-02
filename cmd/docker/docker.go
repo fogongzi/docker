@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/docker/docker/api/types/versions"
@@ -158,6 +159,9 @@ func noArgs(cmd *cobra.Command, args []string) error {
 }
 
 func main() {
+	fmt.Println("Hello, Docker!")
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
+
 	// Set terminal emulation based on platform as required.
 	stdin, stdout, stderr := term.StdStreams()
 	logrus.SetOutput(stderr)
